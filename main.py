@@ -8,7 +8,7 @@ import random
 
 
 
-today = datetime.datetime.strptime(string, "%Y-%m-%d %H:%M:%S")
+today = datetime.datetime.strptime(date, "%Y-%m-%d")
 start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
