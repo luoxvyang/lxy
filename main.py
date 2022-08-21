@@ -36,11 +36,11 @@ def get_zuigao():
   weather = res['data']['list'][0]
   return weather['high'], math.floor(weather['high'])
 
-def (str(get_timenow())):
+def get_timenow():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  return weather['lastUpdateTime'], math.floor(weather['lastUpdateTime'])
+  return weather[(str('lastUpdateTime'))], math.floor(weather[(str('lastUpdateTime'))])
 
 def get_city():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
