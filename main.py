@@ -36,17 +36,7 @@ def get_zuigao():
   weather = res['data']['list'][0]
   return weather['high'], math.floor(weather['high'])
 
-def get_timenow():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather[(str('lastUpdateTime'))], (str('lastUpdateTime'))
 
-def get_city():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather['city'], (str('city'))
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -74,9 +64,8 @@ wm = WeChatMessage(client)
 wea, temperature = get_weather()
 zuidi, zuidi = get_zuidi()
 zuigao, zuigao = get_zuigao()
-timenow, timenow = get_timenow()
-city, city = get_city()
-data = {"city":{city},"weather":{"value":wea},"timenow":{"value":timenow},"zuidi":{"value":zuidi},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+
+data = {"weather":{"value":wea},"zuidi":{"value":zuidi},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
 #weather(天气 中文)
