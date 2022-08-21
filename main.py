@@ -23,7 +23,7 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   high = res['data']['list'][3]
-  low = res['data']['list'][4]
+  low = res['data']['list'][5]
   return weather['weather'], math.floor(weather['temp'])
   return high['high'], math.floor(high['temp'])
   return low['low'], math.floor(low['temp'])
