@@ -24,8 +24,8 @@ def get_weather():
   weather = res['data']['list'][0]
 
   return weather['weather'], math.floor(weather['temp'])
-  return high['high'], math.floor(high['high'])
-  return low['low'], math.floor(low['low'])
+  return zuigao['zuigao'], math.floor(high['high'])
+  return zuidi['zuidi'], math.floor(low['low'])
 
 
 def get_count():
@@ -54,6 +54,6 @@ wm = WeChatMessage(client)
 wea, temperature = get_weather()
 
 
-data = {"weather":{"value":wea},"low":{"value":low},"high":{"value":high},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"zuidi":{"value":zuidi},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
