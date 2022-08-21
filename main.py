@@ -72,3 +72,8 @@ timenow, timenow = get_timenow()
 data = {"weather":{"value":wea},"timenow":{"value":timenow},"zuidi":{"value":zuidi},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
+#weather(天气 中文)
+#temperature(温度现在)
+#timenow(现在时间)
+#zuidi(最低温度)
+#zuigao(最高温度)
