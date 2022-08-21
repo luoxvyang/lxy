@@ -67,6 +67,6 @@ wea, temperature = get_weather()
 zuidi, zuidi = get_zuidi()
 zuigao, zuigao = get_zuigao()
 
-data = {"weather":{"value":wea},"zuidi":{"value":zuidi},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
+data = {"weather":{"value":wea},"zuidi":{"value":zuida},"zuigao":{"value":zuigao},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
