@@ -22,8 +22,8 @@ def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
-  high = res['data']['list'][3]
-  low = res['data']['list'][5]
+  high = res['data']['list'][2]
+  low = res['data']['list'][3]
   return weather['weather'], math.floor(weather['temp'])
   return high['high'], math.floor(high['temp'])
   return low['low'], math.floor(low['temp'])
