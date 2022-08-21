@@ -30,14 +30,14 @@ def get_zuidi():
   res = requests.get(url).json()
   weather = res['data']['list'][0]
 
-  return zuidi['low'], math.floor(zuidi['low'])
+  return weather['low'], math.floor(weather['low'])
 
 def get_zuigao():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
 
-  return zuigao['high'], math.floor(zuidi['high'])
+  return weather['high'], math.floor(weather['high'])
 
 
 def get_count():
